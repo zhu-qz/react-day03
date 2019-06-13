@@ -7,15 +7,16 @@ class App extends Component {
       msg: 'hello world'
     }
   }
+  changeMsg () {
+    this.setState ({
+      msg: 'hello msg'
+    })
+  }
   render () {
     return (
       <div>
         { this.state.msg }
-        <button onClick = { () => {
-          this.setState({
-            msg: 'hello msg'
-          })
-        } }>修改</button>
+        <button onClick = { this.changeMsg.bind(this) }>修改</button>
       </div>
     )
   }
