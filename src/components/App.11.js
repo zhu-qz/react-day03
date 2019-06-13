@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '@/main.scss'
 
 class App extends Component {
   constructor(props) {
@@ -17,16 +18,9 @@ class App extends Component {
   }
   render () {
     return (
-      <ul>
+      <ul className="list">
         { this.state.list.map((item, index) => {
-          return <li key = { item.id } style={
-            {
-              width: '100%',
-              height: '30px',
-              lineHeight: '30px',
-              borderBottom: '1px solid #000'
-            }
-          }>{ item.title }</li>
+          return <li key = { item.id }>{ item.title }</li>
         })}
       </ul>
     )
