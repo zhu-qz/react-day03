@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
 
-// 解决this指向问题 --- render内部绑定this
+// 事件中传参，推荐使用
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log('1', this);
   }
-  btnClickFn () {
-    console.log('2', this)
+  btnClickFn (id) {
+    console.log(id, this)
   }
+
   render () {
+    const _this = this
     return (
       <div>
-        <button onClick = { this.btnClickFn.bind(this) }>react按钮</button>
+        <button onClick = { this.btnClickFn.bind(this, 22)}>react按钮</button>
       </div>
     )
 }
